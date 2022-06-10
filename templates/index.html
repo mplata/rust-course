@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { 
+            background-color: blanchedalmond;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .post {
+            display: flex;
+            width: 300px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: lightblue;
+            margin: 10px;
+            flex-direction: column;
+            padding: 5px;
+            font-family: monospace;
+        }
+    </style>
+    <title>Mi Blog</title>
+</head>
+<body>
+    <div class="title">
+        <h1>
+            <a href="/">Mi Blog</a>
+        </h1>
+    <div>
+    <main class="container">
+        {% for post in posts %}
+                <div class="post">
+                    <a class="" href="/blog/{{ post.slug }}">{{ post.title }}<a>
+                    <p class="">{{ post.body | truncate(length=150) }}<p>
+                </div>
+        {% endfor %}
+    <main>
+</body>
+</html>
